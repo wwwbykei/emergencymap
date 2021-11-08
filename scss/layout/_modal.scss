@@ -1,0 +1,241 @@
+// ---
+// modal
+// ---
+
+.modal{display:none;overflow:hidden;position:fixed;top:0;right:0;bottom:0;left:0;z-index:$z-modal;-webkit-overflow-scrolling:touch;outline:0;
+	// When fading in the modal, animate it to slide down
+	// &.fade .modal-dialog{
+  //   // @include translate(0, -25%);
+  //   // .transition-transform(~"0.3s ease-out");
+	// }
+	// &.in .modal-dialog{
+  //   // @include translate(0, 0)
+  // }
+}
+.modal-open{overflow:hidden;
+	.modal.in{overflow-x:hidden;overflow-y:auto;
+		display: flex !important;
+    	height: 100%;
+		.modal-dialog {
+			margin: auto;
+		}
+	}
+}
+
+// Shell div to position the modal with bottom padding
+.modal-dialog{position:relative;width:auto;margin:10px}
+
+// Actual modal
+.modal-content {
+	position: relative;
+	padding:40px 80px 64px;
+	background-color: $modal-content-bg;
+	border-radius: $modal-radius;
+	@include box-shadow;//(0 3px 9px rgba(0, 0, 0, .5));
+	outline: 0;
+}
+.modal-backdrop {
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: $zindex-modal-background;
+	background-color: $modal-backdrop-bg;
+	&.fade { opacity:0 }
+	&.in { opacity:$modal-backdrop-opacity}
+}
+.modal-header{//padding:$modal-title-padding-mobile;//border-bottom:1px solid $modal-header-border-color;
+	// @include res--laptop{padding:$modal-title-padding-desktop}
+	padding-bottom:24px;
+	// line-height:$modal-title-line-height;
+	border-bottom:1px solid $modal-header-border-color;
+	h3{
+		font-size:2.4rem;
+		font-weight:$fw-b;
+		text-align:center;
+		span{
+			font-weight:$fw-l;
+		}
+	}
+	// &:extend(.clearfix all);
+	.close{
+		// @include btn;
+		position:absolute;
+		top:-64px;
+		right:0;
+		width:40px;
+		height:40px;
+		@include bgi(ico-close-white);
+		@include bgs(40px);
+		@include bgpos(50%,50%);
+		@include text-hidden;
+		//top:$modal-title-padding-mobile;right:$modal-title-padding-mobile;
+		///*@include material-icons;*/color:#666;//.w(24px);.h(24px);.bgimg('ico-close.png');.bgs;.text-hidden}
+		// @include res--laptop{right:24px}
+	}
+}
+// .modal-title{
+// 	margin:0;
+// 	padding-bottom:24px;
+// 	line-height:$modal-title-line-height;
+// 	border-bottom:1px solid $modal-header-border-color;
+// 	h3{
+// 		font-size:2.4rem;
+// 		font-weight:$fw-b;
+// 		text-align:center;
+// 		span{
+// 			font-weight:$fw-l;
+// 		}
+// 	}
+// }
+// Where all modal content resides (sibling of .modal-header and .modal-footer)
+.modal-body{
+	position:relative;
+	// padding:$modal-inner-padding-mobile;
+	// @include res--desktop{padding:$modal-title-padding-desktop}
+	// > h3{
+	// 	font-size:1.6rem;
+	// 	font-weight:$fw-b;
+	// }
+	// > h3 + form{
+	// 	margin-top:20px
+	// }
+}
+.modal-footer{
+	padding-top:52px;
+	//padding:$modal-footer-padding-mobile;
+	//border-top: 1px solid $modal-footer-border-color;
+	@include res--laptop{
+		// padding:$modal-footer-padding-laptop
+	}
+	// text-align: right; // right align buttons
+	// &:extend(.clearfix all); // clear it in case folks use .pull-* classes on buttons
+	
+	// Properly space out buttons
+	// .btn + .btn {
+	// 	margin-bottom: 0; // account for input[type="submit"] which gets the bottom margin like all other inputs
+	// 	margin-left: 5px;
+	// }
+	// // but override that for button groups
+	// .btn-group .btn + .btn {
+	// 	margin-left: -1px;
+	// }
+	// // and override it for block buttons as well
+	// .btn-block + .btn-block {
+	// 	margin-left: 0;
+	// }
+}
+// Measure scrollbar width for padding body during modal show/hide
+.modal-scrollbar-measure {
+	position: absolute;
+	top: -9999px;
+	width: 50px;
+	height: 50px;
+	overflow: scroll;
+}
+// Scale up the modal
+@media (min-width: 560px) {
+	// Automatically set modal's width for larger viewports
+	.modal-dialog {
+		// width: $modal-md;
+		margin: 30px auto;
+	}
+	.modal-content {
+		@include box-shadow(0 5px 15px rgba(0, 0, 0, .5));
+	}
+	.modal-sm { width: $modal-sm; }
+}
+@include res--desktop {
+	.modal-lg { width: $modal-lg; }
+}
+// .modal-notitle{
+// 	.modal-header,.modal-footer{
+// 		@include bnone
+// 	}
+// 	.modal-body,.modal-footer{
+// 		text-align:center
+// 	}
+// }
+// .modal-content{
+// 	.form{
+// 		> .form__group{
+// 			&:first-child{
+// 				margin-top:0
+// 			}
+// 		}
+// 	}
+// }
+
+// 사용자 정보
+.modal-account{
+	width:640px;
+	.modal-body{
+		form{
+			> div{
+				margin-top:32px;
+			}
+		}
+	}
+	.modal-footer{
+		overflow:hidden;
+		text-align:center;
+		.btn{
+			@include btn-h44;
+			// .btn-radius;
+			width:160px;
+			@include res--laptop{
+				@include btn-h56;
+				// .btn-radius;
+				width:180px;
+			}
+			&:not(:first-child){
+				margin-left:12px;
+			}
+		}
+	}
+}
+
+// 환자 이송 정보 알림
+.modal-patient{
+	width:720px;
+	@include res--laptop{
+		width:880px;
+	}
+	.modal-body{
+		.box{
+			margin-bottom:32px;
+			padding:16px 20px;
+			background-color:#f4f4f4;
+			font-size:1.4rem;
+			text-align:center;
+			span{
+				font-weight:$fw-b;
+			}
+		}
+		.contents{
+			overflow:hidden;
+			position:relative;
+		}
+		.list,.modal-map{
+			width:45%;
+		}
+		.list{
+			dl{
+				@include dl-horiz(30%);
+				padding:16px 0;
+				@include bb;
+				font-size:1.6rem;
+			}
+			dt{
+				font-weight:$fw-l;
+			}
+		}
+		.modal-map{
+			position:absolute;
+			top:0;
+			right:0;
+			bottom:0;
+		}
+	}
+}

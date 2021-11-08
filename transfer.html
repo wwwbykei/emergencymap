@@ -1,0 +1,478 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="format-detection" content="telephone=no">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="">
+<meta name="keywords" content="">
+
+<title>환자 이송 : 실시간 긴급 상황 대응 전원 서비스</title>
+<link rel="stylesheet" href="css/style.css">
+<!--[if lt IE 9]>
+<script src="js/IE9.js"></script>
+<script src="js/html5shiv.min.js"></script>
+<script src="js/respond.min.js"></script>
+<![endif]-->
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script src="js/modal.js"></script>
+<script>
+$( document ).ready( function(){
+    // 목록 (환자 이송 등) - 하이라이트 표시
+    $( ".layout-contents .list-item:not(.item-collapse)" ).click(function(e) {
+        var $this = $(this);
+        $this.siblings().removeClass( "active" ).end().addClass( "active" );
+        e.preventDefault();
+    });
+});
+</script>
+</head>
+
+<body class="layout-map">
+
+    <header class="layout-header">
+        <a href="index.html" class="btn header-logo">실시간 긴급 상황<br>대응 전원 서비스</a>
+        <nav class="nav-menu">
+            <a href="transfer.html" class="btn active"><i class="ico-ambulance"></i>환자 이송</a>
+            <a href="joint.html" class="btn"><i class="ico-group"></i>공동 대응</a>
+            <a href="nationalpoint.html" class="btn"><i class="ico-point"></i>국가지점번호</a>
+        </nav>
+        <div class="nav-right">
+            <a data-toggle="modal" data-target="#modal-account" class="btn nav-account"><i class="ico-profile"></i>제주소망병원 응급실010465884</a>
+            <button type="button" class="btn btn-logout"><i class="ico-logout"></i>로그아웃</button>
+        </div>
+    </header>
+
+<!--목록 영역 시작-->
+<div class="layout-contents">
+
+    <!--환자 이송 시작-->
+    <div class="list-contents">
+        <h3 class="list-title">환자 이송</h3>
+        <form class="form-filter">
+            <label>목적지 :</label>
+            <select>
+                <option selected>전체</option>
+                <option>제주대학교 병원</option>
+                <option></option>
+            </select>
+        </form>
+        <p class="list-caption">검색결과 <span>24</span>건</p>
+        <ol class="list">
+            <li class="list-item item-red">
+                <button type="button" class="btn">
+                    <div>
+                        <h5>제주소방 #901</h5>
+                        <span>010-0000-0000</span>
+                    </div>
+                    <ul>
+                        <li>제주대학교 병원</li>
+                        <li>15분</li>
+                        <li>CPR &#40;1&#41;, 경상 &#40;1&#41;</li>
+                    </ul>
+                </button>
+            </li>
+            <li class="list-item item-blue">
+                <button type="button" class="btn">
+                    <div>
+                        <h5>제주대병원 #0845</h5>
+                        <span>010-0000-0000</span>
+                    </div>
+                    <ul>
+                        <li>제주대학교 병원</li>
+                        <li>1분</li>
+                        <li>경상 &#40;2&#41;</li>
+                    </ul>
+                </button>
+            </li>
+            <li class="list-item item-red">
+                <button type="button" class="btn">
+                    <div>
+                        <h5>제주소방 #901</h5>
+                        <span>010-0000-0000</span>
+                    </div>
+                    <ul>
+                        <li>제주대학교 병원</li>
+                        <li>15분</li>
+                        <li>CPR &#40;1&#41;, 경상 &#40;1&#41;</li>
+                    </ul>
+                </button>
+            </li>
+            <li class="list-item item-blue">
+                <button type="button" class="btn">
+                    <div>
+                        <h5>제주대병원 #0845</h5>
+                        <span>010-0000-0000</span>
+                    </div>
+                    <ul>
+                        <li>제주대학교 병원</li>
+                        <li>1분</li>
+                        <li>경상 &#40;2&#41;</li>
+                    </ul>
+                </button>
+            </li>
+            <li class="list-item item-red">
+                <button type="button" class="btn">
+                    <div>
+                        <h5>제주소방 #901</h5>
+                        <span>010-0000-0000</span>
+                    </div>
+                    <ul>
+                        <li>제주대학교 병원</li>
+                        <li>15분</li>
+                        <li>CPR &#40;1&#41;, 경상 &#40;1&#41;</li>
+                    </ul>
+                </button>
+            </li>
+            <li class="list-item item-blue">
+                <button type="button" class="btn">
+                    <div>
+                        <h5>제주대병원 #0845</h5>
+                        <span>010-0000-0000</span>
+                    </div>
+                    <ul>
+                        <li>제주대학교 병원</li>
+                        <li>1분</li>
+                        <li>경상 &#40;2&#41;</li>
+                    </ul>
+                </button>
+            </li>
+            <li class="list-item item-red">
+                <button type="button" class="btn">
+                    <div>
+                        <h5>제주소방 #901</h5>
+                        <span>010-0000-0000</span>
+                    </div>
+                    <ul>
+                        <li>제주대학교 병원</li>
+                        <li>15분</li>
+                        <li>CPR &#40;1&#41;, 경상 &#40;1&#41;</li>
+                    </ul>
+                </button>
+            </li>
+            <li class="list-item item-blue">
+                <button type="button" class="btn">
+                    <div>
+                        <h5>제주대병원 #0845</h5>
+                        <span>010-0000-0000</span>
+                    </div>
+                    <ul>
+                        <li>제주대학교 병원</li>
+                        <li>1분</li>
+                        <li>경상 &#40;2&#41;</li>
+                    </ul>
+                </button>
+            </li>
+            <li class="list-item item-red">
+                <button type="button" class="btn">
+                    <div>
+                        <h5>제주소방 #901</h5>
+                        <span>010-0000-0000</span>
+                    </div>
+                    <ul>
+                        <li>제주대학교 병원</li>
+                        <li>15분</li>
+                        <li>CPR &#40;1&#41;, 경상 &#40;1&#41;</li>
+                    </ul>
+                </button>
+            </li>
+            <li class="list-item item-blue">
+                <button type="button" class="btn">
+                    <div>
+                        <h5>제주대병원 #0845</h5>
+                        <span>010-0000-0000</span>
+                    </div>
+                    <ul>
+                        <li>제주대학교 병원</li>
+                        <li>1분</li>
+                        <li>경상 &#40;2&#41;</li>
+                    </ul>
+                </button>
+            </li>
+            <li class="list-item item-red">
+                <button type="button" class="btn">
+                    <div>
+                        <h5>제주소방 #901</h5>
+                        <span>010-0000-0000</span>
+                    </div>
+                    <ul>
+                        <li>제주대학교 병원</li>
+                        <li>15분</li>
+                        <li>CPR &#40;1&#41;, 경상 &#40;1&#41;</li>
+                    </ul>
+                </button>
+            </li>
+            <li class="list-item item-blue">
+                <button type="button" class="btn">
+                    <div>
+                        <h5>제주대병원 #0845</h5>
+                        <span>010-0000-0000</span>
+                    </div>
+                    <ul>
+                        <li>제주대학교 병원</li>
+                        <li>1분</li>
+                        <li>경상 &#40;2&#41;</li>
+                    </ul>
+                </button>
+            </li>
+            <li class="list-item item-red">
+                <button type="button" class="btn">
+                    <div>
+                        <h5>제주소방 #901</h5>
+                        <span>010-0000-0000</span>
+                    </div>
+                    <ul>
+                        <li>제주대학교 병원</li>
+                        <li>15분</li>
+                        <li>CPR &#40;1&#41;, 경상 &#40;1&#41;</li>
+                    </ul>
+                </button>
+            </li>
+            <li class="list-item item-blue">
+                <button type="button" class="btn">
+                    <div>
+                        <h5>제주대병원 #0845</h5>
+                        <span>010-0000-0000</span>
+                    </div>
+                    <ul>
+                        <li>제주대학교 병원</li>
+                        <li>1분</li>
+                        <li>경상 &#40;2&#41;</li>
+                    </ul>
+                </button>
+            </li>
+            <li class="list-item item-red">
+                <button type="button" class="btn">
+                    <div>
+                        <h5>제주소방 #901</h5>
+                        <span>010-0000-0000</span>
+                    </div>
+                    <ul>
+                        <li>제주대학교 병원</li>
+                        <li>15분</li>
+                        <li>CPR &#40;1&#41;, 경상 &#40;1&#41;</li>
+                    </ul>
+                </button>
+            </li>
+            <li class="list-item item-blue">
+                <button type="button" class="btn">
+                    <div>
+                        <h5>제주대병원 #0845</h5>
+                        <span>010-0000-0000</span>
+                    </div>
+                    <ul>
+                        <li>제주대학교 병원</li>
+                        <li>1분</li>
+                        <li>경상 &#40;2&#41;</li>
+                    </ul>
+                </button>
+            </li>
+            <li class="list-item item-red">
+                <button type="button" class="btn">
+                    <div>
+                        <h5>제주소방 #901</h5>
+                        <span>010-0000-0000</span>
+                    </div>
+                    <ul>
+                        <li>제주대학교 병원</li>
+                        <li>15분</li>
+                        <li>CPR &#40;1&#41;, 경상 &#40;1&#41;</li>
+                    </ul>
+                </button>
+            </li>
+            <li class="list-item item-blue">
+                <button type="button" class="btn">
+                    <div>
+                        <h5>제주대병원 #0845</h5>
+                        <span>010-0000-0000</span>
+                    </div>
+                    <ul>
+                        <li>제주대학교 병원</li>
+                        <li>1분</li>
+                        <li>경상 &#40;2&#41;</li>
+                    </ul>
+                </button>
+            </li>
+            <li class="list-item item-red">
+                <button type="button" class="btn">
+                    <div>
+                        <h5>제주소방 #901</h5>
+                        <span>010-0000-0000</span>
+                    </div>
+                    <ul>
+                        <li>제주대학교 병원</li>
+                        <li>15분</li>
+                        <li>CPR &#40;1&#41;, 경상 &#40;1&#41;</li>
+                    </ul>
+                </button>
+            </li>
+            <li class="list-item item-blue">
+                <button type="button" class="btn">
+                    <div>
+                        <h5>제주대병원 #0845</h5>
+                        <span>010-0000-0000</span>
+                    </div>
+                    <ul>
+                        <li>제주대학교 병원</li>
+                        <li>1분</li>
+                        <li>경상 &#40;2&#41;</li>
+                    </ul>
+                </button>
+            </li>
+            <li class="list-item item-red">
+                <button type="button" class="btn">
+                    <div>
+                        <h5>제주소방 #901</h5>
+                        <span>010-0000-0000</span>
+                    </div>
+                    <ul>
+                        <li>제주대학교 병원</li>
+                        <li>15분</li>
+                        <li>CPR &#40;1&#41;, 경상 &#40;1&#41;</li>
+                    </ul>
+                </button>
+            </li>
+            <li class="list-item item-blue">
+                <button type="button" class="btn">
+                    <div>
+                        <h5>제주대병원 #0845</h5>
+                        <span>010-0000-0000</span>
+                    </div>
+                    <ul>
+                        <li>제주대학교 병원</li>
+                        <li>1분</li>
+                        <li>경상 &#40;2&#41;</li>
+                    </ul>
+                </button>
+            </li>
+        </ol><!--//list-->
+    </div><!--//list-contents-->
+    <a href="index.html" class="btn btn-close">닫기</a>
+    <!--환자 이송 끝-->
+
+</div>
+<!--목록 영역 끝-->
+
+
+<!--지도 영역
+    1. iframe 자리에 지도 추가
+-->
+<div class="wrap-map">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d26614.7668613254!2d126.55154979999999!3d33.5053873!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sko!2skr!4v1636163512295!5m2!1sko!2skr" width="100%" height="100%"></iframe>
+</div>
+
+<!--Modal 사용자 정보-->
+<div class="modal fade" id="modal-account" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-account" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3><span>사용자</span> 정보수정</h3>
+                <button type="button" class="btn close" data-dismiss="modal" aria-label="Close">close</button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div>
+                        <div class="form-item">
+                            <label for="signup-" class="form-label">기관명</label>
+                            <input type="text" id="signup-" class="form-field" value="제주대학교병원">
+                        </div>
+                        <div class="form-item">
+                            <label for="signup-" class="form-label">아이디</label>
+                            <input type="text" id="signup-" class="form-field" value="jeju90">
+                        </div>
+                        <div class="form-item">
+                            <label for="signup-" class="form-label">사용자명</label>
+                            <input type="text" id="signup-" class="form-field" value="제주대학교병원 응급실">
+                        </div>
+                        <div class="form-item">
+                            <label for="signup-" class="form-label">연락처</label>
+                            <input type="text" id="signup-" class="form-field" value="064-123-4567">
+                        </div>
+                    </div>
+                    <div>
+                        <div class="form-item">
+                            <label for="signup-" class="form-label">기존 비밀번호</label>
+                            <div>
+                                <input type="password" id="signup-" class="form-field">
+
+                                <!--비밀번호가 다른 경우, form-error에 'active' 클래스를 추가해주세요-->
+                                <p class="form-error"><i class="ico-warning"></i>비밀번호가 일치하지 않습니다.</p>
+                            </div>
+                        </div>
+                        <div class="form-item">
+                            <label for="signup-" class="form-label">신규 비밀번호</label>
+                            <input type="password" id="signup-" class="form-field" placeholder="영문, 숫자, 특수기호 중 2개 조합 8자리 이상">
+                        </div>
+                        <div class="form-item">
+                            <label for="signup-" class="form-label">신규 비밀번호 확인</label>
+                            <div>
+                                <input type="password" id="signup-" class="form-field">
+
+                                <!--비밀번호가 다른 경우, form-error에 'active' 클래스를 추가해주세요-->
+                                <p class="form-error"><i class="ico-warning"></i>비밀번호가 일치하지 않습니다.</p>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="submit" class="btn btn-fill-primary">저장</button>
+                <button type="button" class="btn btn-fill-gray">취소</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<!--Modal 환자 이송 정보 알림-->
+
+<!--실행 버튼 : 필요하시면 사용하세요-->
+<!-- <a data-toggle="modal" data-target="#modal-patient" class="btn">알림 실행</a> -->
+
+<!--모달 내용 영역-->
+<div class="modal fade" id="modal-patient" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-patient" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>환자 이송 <span>정보 알림</span></h3>
+                <button type="button" class="btn close" data-dismiss="modal" aria-label="Close">close</button>
+            </div>
+            <div class="modal-body">
+                <p class="box"><span>제주대학교병원</span>에 다음과 같이 환자 이송 정보가 등록되었습니다.</p>
+                <div class="contents">
+                    <div class="list">
+                        <dl>
+                            <dt>차량 정보</dt>
+                            <dd>제주소방 #901</dd>
+                        </dl>
+                        <dl>
+                            <dt>차량 연락처</dt>
+                            <dd>010-0000-0000</dd>
+                        </dl>
+                        <dl>
+                            <dt>목적지</dt>
+                            <dd>제주대학교병원</dd>
+                        </dl>
+                        <dl>
+                            <dt>도착 예정 시간</dt>
+                            <dd>15분</dd>
+                        </dl>
+                        <dl>
+                            <dt>환자 탑승 정보</dt>
+                            <dd>CPR &#40;1&#41;, 경상 &#40;1&#41;</dd>
+                        </dl>
+                    </div>
+                    <div class="modal-map">
+                        <!--지도는 예시로 넣었습니다.-->
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d26614.7668613254!2d126.55154979999999!3d33.5053873!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sko!2skr!4v1636163512295!5m2!1sko!2skr" width="100%" height="100%"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
