@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="format-detection" content="telephone=no">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="">
+<meta name="keywords" content="">
+
+<title>실시간 긴급 상황 대응 전원 서비스</title>
+<link rel="stylesheet" href="css/style.css">
+<!--[if lt IE 9]>
+<script src="js/IE9.js"></script>
+<script src="js/html5shiv.min.js"></script>
+<script src="js/respond.min.js"></script>
+<![endif]-->
+<script src="https://code.jquery.com/jquery-latest.min.js"></script>
+<script src="js/modal.js"></script>
+</head>
+
+<body>
+
+<!--Modal 환자 이송 정보 알림-->
+
+<!--실행 버튼 : 필요하시면 사용하세요-->
+<a data-toggle="modal" data-target="#modal-patient" class="btn" style="font-size:40px;">알림 실행</a>
+
+<!--모달 내용 영역-->
+<div class="modal fade" id="modal-patient" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-patient" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>환자 이송 <span>정보 알림</span></h3>
+            	<button type="button" class="btn close" data-dismiss="modal" aria-label="Close">close</button>
+            </div>
+            <div class="modal-body">
+            	<p class="box"><span>제주대학교병원</span>에 다음과 같이 환자 이송 정보가 등록되었습니다.</p>
+				<div class="contents">
+					<div class="list">
+						<dl>
+							<dt>차량 정보</dt>
+							<dd>제주소방 #901</dd>
+						</dl>
+						<dl>
+							<dt>차량 연락처</dt>
+							<dd>010-0000-0000</dd>
+						</dl>
+						<dl>
+							<dt>목적지</dt>
+							<dd>제주대학교병원</dd>
+						</dl>
+						<dl>
+							<dt>도착 예정 시간</dt>
+							<dd>15분</dd>
+						</dl>
+						<dl>
+							<dt>환자 탑승 정보</dt>
+							<dd>CPR &#40;1&#41;, 경상 &#40;1&#41;</dd>
+						</dl>
+					</div>
+					<div class="modal-map">
+						<!--지도는 예시로 넣었습니다.-->
+						<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d26614.7668613254!2d126.55154979999999!3d33.5053873!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sko!2skr!4v1636163512295!5m2!1sko!2skr" width="100%" height="100%"></iframe>
+					</div>
+				</div>
+            </div>
+		</div>
+    </div>
+</div>
+
+</body>
+</html>
